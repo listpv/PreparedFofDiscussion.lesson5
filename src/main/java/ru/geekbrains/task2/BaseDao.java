@@ -71,9 +71,13 @@ public class BaseDao <T>{
         getCurrentSession().delete(entity);
     }
 
-    public void delete(Long id) throws ClassNotFoundException {
+    public void delete(Long id)  {
         String query = String.format("DELETE FROM %s WHERE id = %s", typeParameterClass.getClass().getName(), id);
-        getCurrentSession().createQuery(query).executeUpdate();
+        try {
+            getCurrentSession().createQuery(query).executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public List<T> findAll() {

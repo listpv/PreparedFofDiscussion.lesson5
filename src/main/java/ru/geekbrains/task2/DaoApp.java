@@ -17,10 +17,6 @@ public class DaoApp {
             factory.close();
         }
 
-
-
-
-
     }
 
     public static void baseStudent(SessionFactory sessionFactory){
@@ -56,8 +52,6 @@ public class DaoApp {
             System.out.println(studentBaseDao.findAll());
             System.out.println("Количество -- " + studentBaseDao.findAll().size());
             studentBaseDao.commitCurrentTransaction();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         finally {
             if (studentBaseDao.getCurrentSession() != null) {
@@ -91,9 +85,6 @@ public class DaoApp {
             System.out.println(personBaseDao.findAll());
             System.out.println("Количество -- " + personBaseDao.findAll().size());
             personBaseDao.commitCurrentTransaction();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
         }
         finally {
             if (personBaseDao.getCurrentSession() != null) {

@@ -41,8 +41,6 @@ public class StudentApp {
             System.out.println("Количество -- " + studentDao.findAll().size());
             System.out.println(Student.class.getName());
             studentDao.commitCurrentTransaction();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         finally {
             factory.close();
